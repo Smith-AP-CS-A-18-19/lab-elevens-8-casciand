@@ -4,12 +4,13 @@ Follow the instructions provided for Activity 8 in the student lab guide. This i
 
 1. Discuss the similarities and differences between *Elevens*, *Thirteens*, and *Tens*.
 
-    * Answer
+    * Similarities: isLegal/anotherPlayIsPossible/newGame/isEmpty/deal/replaceSelectedCards/gameIsWon/toString methods, ranks/suits/pointValue instance variables, and the same end goal.
+      Differences: All have different containsPairSum methods relative to their names. Elevens has a containsJQK method and a board size of 9. Tens has a board size of 13 and needs a containsQuartet method. Thirteens has a board size of 10 and needs a containsKing method.
 
 2. As discussed previously, all of the instance variables are declared in the `Board` class. But it is the `ElevensBoard` class that “knows” the board size, and the ranks, suits, and point values of the cards in the deck. How do the `Board` instance variables get initialized with the `ElevensBoard` values? What is the exact mechanism?
 
-    * Answer
+    * Inheritance
 
 3. Now examine the files `Board.java` and `ElevensBoard.java`, found in this repository. Identify the `abstract` methods in `Board.java`. See how these methods are implemented in `ElevensBoard`. Do they cover all the differences between *Elevens*, *Thirteens*, and *Tens* as discussed in question 1? Why or why not?
 
-    * Answer
+    * The isLegal and anotherPlayIsPossible methods are abstract in `Board.java`. isLegal is implemented to determine if there are any legal plays on the board (i.e. non face cards that add to 11, or a jack, king, and queen). anotherPlayIsPossible checks for an 11-pair in the selected cards. No, the methods are different depending on which game is being played.
